@@ -714,9 +714,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2014383746}
+      - m_Target: {fileID: 2014383747}
         m_TargetAssemblyTypeName: CambioEscena, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: CambiarEscena
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf83f1800f6dce4fb9b1800fd6a5f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscenaDestino: Juego_V1
+  nombreEscenaDestino: 
 --- !u!1 &1442046922
 GameObject:
   m_ObjectHideFlags: 0
