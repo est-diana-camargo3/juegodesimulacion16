@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CambioEscena : MonoBehaviour
+public class CambioEscenaBoton : MonoBehaviour
 {
     public string nombreEscenaDestino;
 
