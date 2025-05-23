@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/escenas/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Escenas/MenuInicio.unity
+    guid: 128ab4b53ab60014d9e2f39d55205bfb
+  - enabled: 1
+    path: Assets/Escenas/Juego_V1.unity
+    guid: 818e9a95bb3d15842b00db6efda9d409
+  - enabled: 1
+    path: Assets/Escenas/Fin.unity
+    guid: c900651e7a6b298419808726125121f8
+  - enabled: 1
+    path: Assets/Escenas/Escena Juego.unity
+    guid: e94f2bb8f42abf64cb1113c4b0d8d959
+  - enabled: 0
+    path: Assets/Escenas/esfera daniel3.unity
+    guid: abb06323594ab9040a6273d6685f512f
+>>>>>>> Stashed changes
   m_configObjects: {}
