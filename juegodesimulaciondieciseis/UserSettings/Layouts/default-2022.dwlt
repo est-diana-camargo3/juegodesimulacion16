@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1366
     height: 723
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 308
+  controlID: 42596
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 309
+  controlID: 42553
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 358
+  controlID: 42602
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -415,9 +415,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 14fbffff
+      m_SelectedIDs: 00b10000
+      m_LastClickedID: 45312
+      m_ExpandedIDs: eea9feff98abfeff00adfeff6eaefeff9aaffeff8eb2feff7eb5feff14b6feff46bbfeff30bcfeff12c4feff5cc4feffeec4feff90c5fefffed7feff10e0feff5ee0feffe00fffffa011ffff3c1cffffd81dffffbc3fffff7c42ffff2c44ffff1245fffffa5dffff7a5effffde7effff9890ffff3ea3ffff1eb8ffff74b8ffffc0b8ffff92bdffffe0bdffff3abeffff80beffffd0beffff18bfffff5ebfffffa6bfffffeebfffff34c0ffff7ac0ffffc0c0ffff12c1ffff58c1ffffa0c1ffffecc1ffff78c2fffff6daffff1afbffff9e610000a8610000b8610000bc610000c66d0000d06d0000d2710000dc710000ec710000f0710000c87d0000d27d0000e27d0000e67d0000848800008e8800009e880000a2880000f6960000329900003c99000050990000d8a10000e2a1000004a9000016a90000c8ab0000daab000054ac00008cad0000a6ad000034af000046af000060af0000eeb0000000b100001ab10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -966,9 +966,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1222.1968, y: 679.54974, z: -11.52173}
+    m_Target: {x: -3.0933316, y: -3.7276833, z: -0.025615854}
     speed: 2
-    m_Value: {x: 1222.1968, y: 679.54974, z: -11.52173}
+    m_Value: {x: -3.0933316, y: -3.7276833, z: -0.025615854}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1018,9 +1018,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1160.1809
+    m_Target: 4.251764
     speed: 2
-    m_Value: 1160.1809
+    m_Value: 4.251764
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1065,8 +1065,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: -32000
-    y: -31593
+    x: 0
+    y: 452
     width: 1041
     height: 275
   m_SerializedDataModeController:
@@ -1090,7 +1090,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Escenas
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1098,16 +1098,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Escenas
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Usuario\Documents\GitHub\juegodesimulacion16\juegodesimulaciondieciseis
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6e620000
-    m_LastClickedID: 25198
-    m_ExpandedIDs: 00000000546200005662000000ca9a3b
+    m_SelectedIDs: 5c620000
+    m_LastClickedID: 25180
+    m_ExpandedIDs: 00000000466200006a62000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1135,7 +1135,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000546200005662000000ca9a3b
+    m_ExpandedIDs: 00000000466200006a62000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
