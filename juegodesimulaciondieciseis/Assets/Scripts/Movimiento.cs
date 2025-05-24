@@ -21,7 +21,7 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IzqDer = Input.GetAxisRaw("Horizontal"); //Devuelve 1 o -1 en función de si se aprietan las teclas Izq, Der, A o D
+        IzqDer = Input.GetAxisRaw("Horizontal"); //Devuelve 1 o -1 en funciï¿½n de si se aprietan las teclas Izq, Der, A o D
         if (Input.GetButtonDown("Jump") && Yac) // "Jump" se asocia a barra espaciadora o flecha arriba por defecto
         {
             Mono.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
