@@ -9,8 +9,9 @@ public class Movimiento : MonoBehaviour
     [SerializeField] private float force;
     [SerializeField] private float jumpForce;
     private float IzqDer;
-    private bool Yac;
+    private bool Yac = true;
     private Rigidbody2D Mono;
+    private float velocidadMaxima = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,31 +22,24 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IzqDer = Input.GetAxisRaw("Horizontal"); //Devuelve 1 o -1 en función de si se aprietan las teclas Izq, Der, A o D
-        if (Input.GetButtonDown("Jump") && Yac) // "Jump" se asocia a barra espaciadora o flecha arriba por defecto
+        IzqDer = Input.GetAxisRaw("Horizontal");
+        Vector2 origen = new Vector2(transform.position.x, transform.position.y - 1.2f);
+        RaycastHit2D hit = Physics2D.Raycast(origen, Vector2.down, 0.5f);
+        Yac = hit.collider != null && hit.collider.CompareTag("Ground");
+        if (Input.GetButtonDown("Jump") && Yac)
         {
             Mono.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
-    private void FixedUpdate() //Calcula fisicas
+    private void FixedUpdate()
     {
         Vector2 input = new Vector2(IzqDer, 0f);
         Mono.AddForce(input * force);
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (Mathf.Abs(Mono.velocity.x) > velocidadMaxima)
         {
-            Yac = true;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Yac = false;
+            Mono.velocity = new Vector2(Mathf.Sign(Mono.velocity.x) * velocidadMaxima, Mono.velocity.y);
         }
     }
 }
