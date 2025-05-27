@@ -1,12 +1,10 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneTransition : MonoBehaviour
 {
-    public Image panelNegro;
-    public float velocidad = 1f;
-
     void Start()
     {
         StartCoroutine(FadeIn());
@@ -22,14 +20,18 @@ public class SceneTransition : MonoBehaviour
             yield return null;
         }
     }
+    
+    public Image panelNegro;
+    public float velocidad = 1f;
 
-    public void CambiarEscenaConFade(string escena)
+    public void CambiarEscenaConFade(string nuevaEscena)
     {
-        StartCoroutine(FadeYTransicion(escena));
+        StartCoroutine(FadeYTransicion(nuevaEscena));
     }
 
     IEnumerator FadeYTransicion(string escena)
     {
+        // Fade to black
         float alpha = 0f;
         while (alpha < 1f)
         {
@@ -37,6 +39,8 @@ public class SceneTransition : MonoBehaviour
             panelNegro.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
+
+        // Cambiar de escena
         SceneManager.LoadScene(escena);
     }
 }
