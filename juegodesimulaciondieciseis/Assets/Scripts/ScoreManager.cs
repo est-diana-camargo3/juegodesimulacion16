@@ -54,6 +54,6 @@ public class ScoreManager : MonoBehaviour
     void UpdateScoreDisplay()
     {
         if (scoreText != null)
-            scoreText.text = "Puntos: " + currentScore;
+            scoreText.text = "" + currentScore;
     }
 }

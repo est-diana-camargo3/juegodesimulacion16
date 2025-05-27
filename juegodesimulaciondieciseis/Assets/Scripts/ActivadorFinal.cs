@@ -28,7 +28,7 @@ public class ActivadorFinal : MonoBehaviour
     {
         fondoGanaste.SetActive(true);
         textoPuntuacion.gameObject.SetActive(true);
-        textoPuntuacion.text = "Puntuación: " + PlayerPrefs.GetInt("FinalScore", 0);
+        textoPuntuacion.text = "" + PlayerPrefs.GetInt("FinalScore", 0);
     }
 
     void MostrarPantallaGameOver()

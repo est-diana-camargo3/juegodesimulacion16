@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Ground
   - GameOver
-  - NIvelII
+  - NivelDos
+  - Obstaculo
+  - Recompensa
   layers:
   - Default
   - TransparentFX
