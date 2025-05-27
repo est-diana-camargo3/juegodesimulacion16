@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class SceneTransition : MonoBehaviour
     {
         StartCoroutine(FadeIn());
     }
-
+    public void CambiarEscenaConFade(string escena)
+    {
+        StartCoroutine(FadeYTransicion(escena));
+    }
     IEnumerator FadeIn()
     {
         float alpha = 1f;
@@ -22,12 +26,6 @@ public class SceneTransition : MonoBehaviour
             yield return null;
         }
     }
-
-    public void CambiarEscenaConFade(string escena)
-    {
-        StartCoroutine(FadeYTransicion(escena));
-    }
-
     IEnumerator FadeYTransicion(string escena)
     {
         float alpha = 0f;

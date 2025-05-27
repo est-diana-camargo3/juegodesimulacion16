@@ -1139,6 +1139,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 10
   jumpForce: 10
+  Ob1: {fileID: 0}
+  Ob2: {fileID: 0}
+  Suelo1: {fileID: 0}
+  Suelo2: {fileID: 0}
+  Suelo3: {fileID: 0}
+  Suelo4: {fileID: 0}
+  Suelo5: {fileID: 0}
+  Suelo6: {fileID: 0}
+  Suelo7: {fileID: 0}
+  Suelo8: {fileID: 0}
+  Pmovil1: {fileID: 0}
 --- !u!114 &619850058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2757,7 +2768,7 @@ GameObject:
   - component: {fileID: 1528138836}
   - component: {fileID: 1528138835}
   m_Layer: 0
-  m_Name: ControladorTransicion
+  m_Name: ControladorTransicionV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
