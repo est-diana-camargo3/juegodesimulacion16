@@ -7,24 +7,24 @@ public class TerrenoFalso : MonoBehaviour
 {
     private float vo = 0f, g = 9.81f, Cm, C = 1.3f;
     public float vac, yac, tac, m, xac1, xac2, yac1, yac2, xaux, yaux;
-    private int To = 0;
+    private bool caer = false;
+    private float tiempoDeteccion = 0f;
+    private bool colisionDetectada = false;
     Vector2 Pos = Vector2.zero;
     public GameObject Ob1, Ob2;
 
-    // Start is called before the first frame update
     void Start()
     {
         Ob1 = GameObject.Find("Mono");
-        Ob2 = GameObject.Find("Obstaculo2");
+        Ob2 = GameObject.Find("SueloFalso1");
 
         Cm = C / m;
         vac = 0;
         yac = this.transform.position.y;
         tac = 0;
-        Pos.x = 0;
+        Pos.x = Ob2.transform.position.x;
     }
 
-    // Update is called once per frame
     void Update()
     {
         xac1 = Ob1.transform.position.x;
@@ -34,18 +34,27 @@ public class TerrenoFalso : MonoBehaviour
 
         xaux = Mathf.Abs(xac1 - xac2);
         yaux = Mathf.Abs(yac1 - yac2);
-        if (xaux <= 1 && yaux <= 1)
+
+        // Detecta si el personaje pisa el obstáculo
+        if (!colisionDetectada && xaux <= 6 && yaux <= 2.5)
         {
-            Debug.Log("Mono pisa Obstaculo2");//Mensaje por consola que confirma el choque.
-            To = 1;
+            colisionDetectada = true;
+            tiempoDeteccion = Time.time; // Guardamos el tiempo actual
         }
-        if (To == 1)
+
+        // Después de 1 segundo desde la colisión, activar la caída
+        if (colisionDetectada && !caer && Time.time >= tiempoDeteccion + 1f)
+        {
+            caer = true;
+        }
+
+        if (caer)
         {
             vac = vac + (Time.deltaTime * (-1 * g - (Cm * vac)));
             yac = yac + (vac * Time.deltaTime);
             tac = tac + Time.deltaTime;
             Pos.y = yac;
-            this.transform.position = Pos;
+            Ob2.transform.position = Pos;
         }
     }
 }
