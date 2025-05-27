@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class CameraFollowMico : MonoBehaviour
 {
     public Transform micoTransform; // Asigna aquí al personaje en el inspector
