@@ -13,7 +13,10 @@ public class Movimiento : MonoBehaviour
     private float IzqDer;
 
     private float xac1, yac1; //Posicion Mono
-    private float xac2, yac2, xaux, yaux; //Posicion SueloFalso1 - Abs Mono Vs SueloFalso1
+    private float xac2, yac2, xauxF2, yauxF2; //Posicion SueloFalso1 - Abs Mono Vs SueloFalso1
+    private float xac3, yac3, xauxF3, yauxF3; //Posicion SueloFalso2 - Abs Mono Vs SueloFalso2
+    private float xac4, yac4, xauxF4, yauxF4; //Posicion SueloFalso3 - Abs Mono Vs SueloFalso3
+    private float xac5, yac5, xauxF5, yauxF5; //Posicion SueloFalso4 - Abs Mono Vs SueloFalso4
     private float xp1, yp1, xaux1, yaux1; //Posicion Suelo1 - Abs Mono Vs Suelo1
     private float xp2, yp2, xaux2, yaux2; //Posicion Suelo2 - Abs Mono Vs Suelo2
     private float xp3, yp3, xaux3, yaux3; //Posicion Suelo3 - Abs Mono Vs Suelo3
@@ -22,12 +25,14 @@ public class Movimiento : MonoBehaviour
     private float xp6, yp6, xaux6, yaux6; //Posicion Suelo6 - Abs Mono Vs Suelo6
     private float xp7, yp7, xaux7, yaux7; //Posicion Suelo7 - Abs Mono Vs Suelo7
     private float xp8, yp8, xaux8, yaux8; //Posicion Suelo8 - Abs Mono Vs Suelo8
+    private float xp9, yp9, xaux9, yaux9; //Posicion Suelo9 - Abs Mono Vs Suelo8
     private float xm1, ym1, xauxm1, yauxm1; //Posicion SueloMovil1 - Abs Mono Vs SueloMovil1
+    private float xm2, ym2, xauxm2, yauxm2; //Posicion SueloMovil2 - Abs Mono Vs SueloMovil1
 
     private Rigidbody2D Mono;
     private float velocidadMaxima = 10f;
     private bool EstaEnElSuelo = false;
-    public GameObject Ob1, Ob2, Suelo1, Suelo2, Suelo3, Suelo4, Suelo5, Suelo6, Suelo7, Suelo8, Pmovil1;
+    public GameObject Ob1, Ob2, Ob3, Ob4, Ob5, Suelo1, Suelo2, Suelo3, Suelo4, Suelo5, Suelo6, Suelo7, Suelo8, Suelo9, Pmovil1, Pmovil2;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +40,9 @@ public class Movimiento : MonoBehaviour
         Mono = GetComponent<Rigidbody2D>();
         Ob1 = GameObject.Find("Mono");
         Ob2 = GameObject.Find("SueloFalso1");
+        Ob3 = GameObject.Find("SueloFalso2");
+        Ob4 = GameObject.Find("SueloFalso3");
+        Ob5 = GameObject.Find("SueloFalso4");
         Suelo1 = GameObject.Find("Suelo1");
         Suelo2 = GameObject.Find("Suelo2");
         Suelo3 = GameObject.Find("Suelo3");
@@ -43,13 +51,18 @@ public class Movimiento : MonoBehaviour
         Suelo6 = GameObject.Find("Suelo6");
         Suelo7 = GameObject.Find("Suelo7");
         Suelo8 = GameObject.Find("Suelo8");
+        Suelo9 = GameObject.Find("Suelo8");
         Pmovil1 = GameObject.Find("Pmovil1");
+        Pmovil2 = GameObject.Find("Pmovil2");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Renderer F1 = Ob2.GetComponent<Renderer>();
+        Renderer F2 = Ob2.GetComponent<Renderer>();
+        Renderer F3 = Ob2.GetComponent<Renderer>();
+        Renderer F4 = Ob2.GetComponent<Renderer>();
+        Renderer F5 = Ob2.GetComponent<Renderer>();
         Renderer S1 = Suelo1.GetComponent<Renderer>();
         Renderer S2 = Suelo2.GetComponent<Renderer>();
         Renderer S3 = Suelo3.GetComponent<Renderer>();
@@ -58,7 +71,9 @@ public class Movimiento : MonoBehaviour
         Renderer S6 = Suelo6.GetComponent<Renderer>();
         Renderer S7 = Suelo7.GetComponent<Renderer>();
         Renderer S8 = Suelo8.GetComponent<Renderer>();
+        Renderer S9 = Suelo8.GetComponent<Renderer>();
         Renderer M1 = Pmovil1.GetComponent<Renderer>();
+        Renderer M2 = Pmovil2.GetComponent<Renderer>();
 
         IzqDer = Input.GetAxisRaw("Horizontal");
 
@@ -67,6 +82,15 @@ public class Movimiento : MonoBehaviour
         
         xac2 = Ob2.transform.position.x;
         yac2 = Ob2.transform.position.y;
+
+        xac3 = Ob3.transform.position.x;
+        yac3 = Ob3.transform.position.y;
+
+        xac4 = Ob4.transform.position.x;
+        yac4 = Ob4.transform.position.y;
+
+        xac5 = Ob5.transform.position.x;
+        yac5 = Ob5.transform.position.y;
 
         xp1 = Suelo1.transform.position.x;
         yp1 = Suelo1.transform.position.y;
@@ -92,11 +116,26 @@ public class Movimiento : MonoBehaviour
         xp8 = Suelo8.transform.position.x;
         yp8 = Suelo8.transform.position.y;
 
+        xp9 = Suelo9.transform.position.x;
+        yp9 = Suelo9.transform.position.y;
+
         xm1 = Pmovil1.transform.position.x;
         ym1 = Pmovil1.transform.position.y;
 
-        xaux = Mathf.Abs(xac1 - xac2);
-        yaux = Mathf.Abs(yac1 - yac2);
+        xm2 = Pmovil2.transform.position.x;
+        ym2 = Pmovil2.transform.position.y;
+
+        xauxF2 = Mathf.Abs(xac1 - xac2);
+        yauxF2 = Mathf.Abs(yac1 - yac2);
+
+        xauxF3 = Mathf.Abs(xac1 - xac3);
+        yauxF3 = Mathf.Abs(yac1 - yac3);
+
+        xauxF4 = Mathf.Abs(xac1 - xac4);
+        yauxF4 = Mathf.Abs(yac1 - yac4);
+
+        xauxF5 = Mathf.Abs(xac1 - xac5);
+        yauxF5 = Mathf.Abs(yac1 - yac5);
 
         xaux1 = Mathf.Abs(xac1 - xp1);
         yaux1 = Mathf.Abs(yac1 - yp1);
@@ -122,8 +161,14 @@ public class Movimiento : MonoBehaviour
         xaux8 = Mathf.Abs(xac1 - xp8);
         yaux8 = Mathf.Abs(yac1 - yp8);
 
+        xaux9 = Mathf.Abs(xac1 - xp9);
+        yaux9 = Mathf.Abs(yac1 - yp9);
+
         xauxm1 = Mathf.Abs(xac1 - xm1);
         yauxm1 = Mathf.Abs(yac1 - ym1);
+
+        xauxm2 = Mathf.Abs(xac1 - xm2);
+        yauxm2 = Mathf.Abs(yac1 - ym2);
 
         // Detectar si está en el suelo1
         if (xaux1 <= S1.bounds.size.x/2 && yaux1 <= 2.5)
@@ -229,6 +274,19 @@ public class Movimiento : MonoBehaviour
             // Detener velocidad vertical si está en el suelo
             Mono.velocity = new Vector2(Mono.velocity.x, 0f);
         }
+        // Detectar si está en el suelo8
+        else if (xaux8 <= S9.bounds.size.x / 2 && yaux9 <= 2.5)
+        {
+            EstaEnElSuelo = true;
+
+            // Corregir posición para que no atraviese el suelo1
+            Vector3 pos = transform.position;
+            pos.y = yp9 + 2.5f;
+            Mono.transform.position = pos;
+
+            // Detener velocidad vertical si está en el suelo
+            Mono.velocity = new Vector2(Mono.velocity.x, 0f);
+        }
         // Detectar si está en el Pmovil1
         else if (xauxm1 <= M1.bounds.size.x / 2 && yauxm1 <= 2.5)
         {
@@ -242,14 +300,66 @@ public class Movimiento : MonoBehaviour
             // Detener velocidad vertical si está en el suelo
             Mono.velocity = new Vector2(Mono.velocity.x, 0f);
         }
-        // Detecta si el personaje pisa el obstáculo
-        else if (xaux <= F1.bounds.size.x / 2 && yaux <= 2.5)
+        // Detectar si está en el Pmovil2
+        else if (xauxm2 <= M2.bounds.size.x / 2 && yauxm2 <= 2.5)
+        {
+            EstaEnElSuelo = true;
+
+            // Corregir posición para que no atraviese el suelo1
+            Vector3 pos = transform.position;
+            pos.y = ym2 + 2.5f;
+            Mono.transform.position = pos;
+
+            // Detener velocidad vertical si está en el suelo
+            Mono.velocity = new Vector2(Mono.velocity.x, 0f);
+        }
+        // Detecta si el personaje pisa el suelo falso1
+        else if (xauxF2 <= F2.bounds.size.x / 2 && yauxF2 <= 2.5)
         {
             EstaEnElSuelo = true;
 
             // Corregir posición para que no atraviese el suelo
             Vector3 pos = transform.position;
             pos.y = yac2 + 2.5f;
+            Mono.transform.position = pos;
+
+            // Detener velocidad vertical si está en el suelo
+            Mono.velocity = new Vector2(Mono.velocity.x, 0f);
+        }
+        // Detecta si el personaje pisa el suelo falso2
+        else if (xauxF3 <= F3.bounds.size.x / 2 && yauxF3 <= 2.5)
+        {
+            EstaEnElSuelo = true;
+
+            // Corregir posición para que no atraviese el suelo
+            Vector3 pos = transform.position;
+            pos.y = yac3 + 2.5f;
+            Mono.transform.position = pos;
+
+            // Detener velocidad vertical si está en el suelo
+            Mono.velocity = new Vector2(Mono.velocity.x, 0f);
+        }
+        // Detecta si el personaje pisa el suelo falso3
+        else if (xauxF4 <= F4.bounds.size.x / 2 && yauxF4 <= 2.5)
+        {
+            EstaEnElSuelo = true;
+
+            // Corregir posición para que no atraviese el suelo
+            Vector3 pos = transform.position;
+            pos.y = yac4 + 2.5f;
+            Mono.transform.position = pos;
+
+            // Detener velocidad vertical si está en el suelo
+            Mono.velocity = new Vector2(Mono.velocity.x, 0f);
+        }
+        // Detecta si el personaje pisa el suelo falso4
+        else if (xauxF5 <= F5.bounds.size.x / 2 && yauxF5 <= 2.5)
+        {
+            EstaEnElSuelo = true;
+
+            // Corregir posición para que no atraviese el suelo
+            Vector3 pos = transform.position;
+            pos.y = yac5 + 2.5f;
             Mono.transform.position = pos;
 
             // Detener velocidad vertical si está en el suelo
