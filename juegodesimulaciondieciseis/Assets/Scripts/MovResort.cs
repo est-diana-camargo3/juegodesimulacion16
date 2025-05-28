@@ -6,7 +6,7 @@ public class PlataformaResortada : MonoBehaviour
     private float k = 5f;          // Constante del resorte
     private float b = 0.2f;           // Coeficiente de amortiguamiento
     private float destinoX1 = 140f;  // Cuánto se desplaza inicialmente
-    private float destinoX2 = 320f;  // Cuánto se desplaza inicialmente
+    private float destinoX2 = 300f;  // Cuánto se desplaza inicialmente
 
     private float xac1, yac1;
     private float xac2, yac2, xauxM2, yauxM2; //Pmovil1
